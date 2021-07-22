@@ -80,20 +80,20 @@ def get_photos(flickr, Photos, Ids):
         Photos[id_now]['neighbourhood'] = info['photo']['location']['neighbourhood']['_content']
         Photos[id_now]['url'] = info['photo']['urls']['url'][0]['_content']
 
-        if len(processed)%20 ==1:
+        if len(processed)%100 ==1:
             print('{}/{} photos collected'.format(len(processed),len(Ids)))
-            with open(args.save_dir+'Photo_info.p', 'wb') as fp:
+            with open(args.save_dir+'Photo_info_last.p', 'wb') as fp:
                 pickle.dump(Photos,fp, protocol=pickle.HIGHEST_PROTOCOL)
             photo_df = pd.DataFrame(Photos).T.drop('info',axis=1)
-            photo_df.to_csv(args.save_dir+'photos.csv', sep='\t',encoding='utf-8-sig')
+            photo_df.to_csv(args.save_dir+'photos_last.csv', sep='\t',encoding='utf-8-sig')
     
-    with open(args.save_dir+'Photo_info_pre.p', 'wb') as fp:
+    with open(args.save_dir+'Photo_info_last_pre.p', 'wb') as fp:
         pickle.dump(Photos,fp, protocol=pickle.HIGHEST_PROTOCOL)
 
-    with open(args.save_dir+'Photo_info.p', 'wb') as fp:
+    with open(args.save_dir+'Photo_info_last.p', 'wb') as fp:
         pickle.dump(Photos,fp, protocol=pickle.HIGHEST_PROTOCOL)
     photo_df = pd.DataFrame(Photos).T.drop('info',axis=1)
-    photo_df.to_csv(args.save_dir+'photos.csv', sep='\t',encoding='utf-8-sig')
+    photo_df.to_csv(args.save_dir+'photos_last.csv', sep='\t',encoding='utf-8-sig')
     return Photos
 
 def main():
@@ -118,8 +118,8 @@ def main():
             else:
                 Ids = collect_ids(flickr, lat,lon, args.radius, tags=args.tags, x=x,y=y)
 
-            if 'Photo_info.p' in [files for root, dirs, files in os.walk(args.save_dir)][0]:
-                with open(args.save_dir+'Photo_info.p', 'rb') as fp:
+            if 'Photo_info_last.p' in [files for root, dirs, files in os.walk(args.save_dir)][0]:
+                with open(args.save_dir+'Photo_info_last.p', 'rb') as fp:
                         Photos = pickle.load(fp)
             else:
                 Photos = {}
