@@ -1,2 +1,2 @@
-# Flickr_Venice
+# Flickr_Heritage
 Data_Acquisition_and_Preprocess_Venice
