@@ -1,2 +1,2 @@
 # Flickr_Heritage
-Data_Acquisition_and_Preprocess_Venice
+Data Acquisition and Preprocess for Venice and Suzhou.
