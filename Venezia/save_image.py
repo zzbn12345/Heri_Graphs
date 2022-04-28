@@ -10,32 +10,18 @@ import urllib
 
 args = Namespace(
     # Data and Path information
-    api_key = u'9e32e17383e134335b5cabf2eb186b7a',
-    api_secret = u'781aa9cac0a656c9',
+    api_key = u'[api_key]',
+    api_secret = u'[api_secret]',
     radius = 5,
     save_dir = 'data_storage/',
     tags = None,
     len_grid = 1,
     image_dir = 'data_storage/images/'
-    #tags = 'landscape,urban,heritage,culture,building,architecture,park,street'
-)
+    )
 
 def get_latlon(id_x, id_y, num = args.len_grid):
-    lat_min = 45.420855
-    lon_min = 12.291054
-
-    lat_max = 45.448286
-    lon_max = 12.369234
-    
-    if not num==1:
-        lat_d = (lat_max - lat_min)/(num-1)
-        lon_d = (lon_max - lon_min)/(num-1)
-
-        lat = lat_min + id_x * lat_d
-        lon = lon_min + id_y * lon_d
-    else:
-        lat = 45.438759
-        lon = 12.327145
+    lat = 45.438759
+    lon = 12.327145
     return lat,lon
 
 def collect_ids(flickr, lat, lon, radius, x,y, tags = None):
@@ -131,9 +117,6 @@ def main():
 
     flickr = flickrapi.FlickrAPI(args.api_key, args.api_secret)
 
-    #df=pd.read_csv(args.save_dir+'5km/photos.csv',sep='\t').rename(columns={'Unnamed: 0':'ids'})
-    #Ids = df['ids']
-
     if 'completed.p' in [files for root, dirs, files in os.walk(args.image_dir)][0]:
         with open(args.image_dir+'completed.p', 'rb') as fp:
             completed = pickle.load(fp)
@@ -173,20 +156,6 @@ def main():
             
             completed_df = pd.DataFrame(completed).T
             completed_df.to_csv(args.save_dir+'completed.csv')
-
-    #Photos = get_photos(flickr, Photos, Ids)
-
-    #completed[(x,y)] = {}
-    #completed[(x,y)]['collected'] = len(Ids)
-    #completed[(x,y)]['total'] = len(Photos)
-    #completed = Photos.keys()
-
-    #with open(args.image_dir+'completed.p', 'wb') as fp:
-    #    pickle.dump(completed,fp, protocol=pickle.HIGHEST_PROTOCOL)
-    
-    #completed_df = pd.DataFrame(completed).T
-    #completed_df.to_csv(args.image_dir+'completed.csv')
-
 
 if __name__ == "__main__":
     main()

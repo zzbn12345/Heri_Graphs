@@ -7,6 +7,8 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
 (to be continued)
 
 ## Requirment and Dependency
+deep_translator == 
+
 facenet_pytorch == 2.5.2
 
 fastai == 2.5.3
@@ -61,4 +63,19 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
 
 ### Small Datasets
+The code to download raw data as IDs of Flickr posts and to save images are given in ```./[city]/save_image.py```.
+
 A restriction of maximum ```5000``` IDs has been given to the API to keep datasets comparable to each other.
+The downloaded IDs together with metadata of downloadable links will be saved as ```./[city]/data_storage/images/photos_sizes.csv```, and the images of which the owner allowed download with ```candownload``` flag will be saved in ```./[city]/data_storage/images/150/``` and ```./[city]/data_storage/images/320/```, respectively, for the ```Large Square - url_q``` (150&times;150 px) and ```Small 320 - url_n``` (320&times;240 px) versions of the original image.
+
+
+## Acknowledgements and License
+This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
+
+[Places365-CNNs](https://github.com/CSAILVision/places365)
+
+[Face Recognition Using Pytorch](https://github.com/timesler/facenet-pytorch)
+
+[WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage)
+
+The copyright of all the downloaded and processed images belongs to the image owners.
