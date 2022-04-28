@@ -73,6 +73,8 @@ The downloaded metadata will be saved as ```./[city]/data_storage/images/photos_
 ### Large Datasets
 To collect large datasets without the restriction of ```5000``` IDs, follow ```./Venezia/collect_data.py``` to save all the IDs and metadata, and follow ```./Venezia/save_image_all.py``` to download the images in the folder.
 
+Input the respective ```[api_key]```, ```[api_secret]``` , the range of minumum and maximum ```[city_lat]``` and ```[city_lon]``` as bounding box of the region, the size of the grid (default ```20```), and radius of inquiry in the grid (default ```0.3```) to run the code.
+
 The IDs will be collected in a 20 by 20 grid with the name of ```./[city]/data_storage/photo_ids_{}_{}.csv```, while the summarized metadata will be saved in ```./[city]/data_storage/photos_last.csv```.
 All the saved images will be stored in the folder ```./[city]/data_storage/images/grid/``` with the ```Large Square - url_q``` (150&times;150 px) version of the original image.
 
