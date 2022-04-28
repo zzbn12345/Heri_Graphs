@@ -110,6 +110,23 @@ The final merged **visual features data** (982-dimensional) are provided in ```.
 | 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | &sigma;<sup>(10)</sup>(***L***<sup>a</sup>)
 
 ### Textual Features
+The data cleaning of textual data, and the 3-dimensional vector of original language of posts could be obtained following ```./Dataset_Cleaning_and_Merging_[city].ipynb```.
+The results will be saved as ```./[city]/data_storage/metadata.csv``` in post level and ```./[city]/data_storage/sentences.csv``` in sentence level.
+
+The 768-dimensional vector of BERT [CLS] token could be obtained following ```./bert_inference_HeriGraph.ipynb```.
+The results will be saved as ```./[city]/data_storage/metadata_bert.csv``` in post level and ```./[city]/data_storage/sentences_bert.csv``` in sentence level.
+
+The final merged **textual features data** (771-dimensional) are provided in ```./[city]/data_storage/Textual_Features.csv```, which is effectively a 776-column table.
+
+| Column Index | Name | Description | Data Type | Notation |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0 | index | Unique Image Index from Flickr | String | -
+| 1 | text_bool | If the original post has a valid textual data (as a filter) | Boolean | - 
+| 2 | revised_text | The processed and filtered textual data of the post as combination of description, title, and tags. | String | *S*
+| 3-4 | num_sent/ text_len | Number of sentences and number of words in the revised text | Integer | - 
+| 5-772 | BERT_[i] | The 768-dimensional output vector of [CLS] token | Float | ***H***<sup>B</sup>
+| 773-775 | English/ Local_Lang/ Other_Lang | Detected original language in the posts | Bolean | ***O***
+
 ### Contextual Features
 
 ## Label Generation
