@@ -65,9 +65,16 @@ Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/servi
 ### Small Datasets
 The code to download raw data as IDs of Flickr posts and to save images are given in ```./[city]/save_image.py```.
 
+Input the respective ```[api_key]```, ```[api_secret]``` ,```[city_lat]```, ```[city_lon]```, and ```[city_radius]``` to run the code.
 A restriction of maximum ```5000``` IDs has been given to the API to keep datasets comparable to each other.
-The downloaded IDs together with metadata of downloadable links will be saved as ```./[city]/data_storage/images/photos_sizes.csv```, and the images of which the owner allowed download with ```candownload``` flag will be saved in ```./[city]/data_storage/images/150/``` and ```./[city]/data_storage/images/320/```, respectively, for the ```Large Square - url_q``` (150&times;150 px) and ```Small 320 - url_n``` (320&times;240 px) versions of the original image.
 
+The downloaded metadata will be saved as ```./[city]/data_storage/images/photos_sizes.csv```, and the images of which the owner allowed to download with ```candownload==True``` flag will be saved in ```./[city]/data_storage/images/150/``` and ```./[city]/data_storage/images/320/```, respectively, for the ```Large Square - url_q``` (150&times;150 px) and ```Small 320 - url_n``` (320&times;240 px) versions of the original image.
+
+### Large Datasets
+To collect large datasets without the restriction of ```5000``` IDs, follow ```./Venezia/collect_data.py``` to save all the IDs and metadata, and follow ```./Venezia/save_image_all.py``` to download the images in the folder.
+
+The IDs will be collected in a 20 by 20 grid with the name of ```./[city]/data_storage/photo_ids_{}_{}.csv```, while the summarized metadata will be saved in ```./[city]/data_storage/photos_last.csv```.
+All the saved images will be stored in the folder ```./[city]/data_storage/images/grid/``` with the ```Large Square - url_q``` (150&times;150 px) version of the original image.
 
 ## Acknowledgements and License
 This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
