@@ -43,6 +43,15 @@ transformers == 4.16.2
 
 [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage) (please download the repository ```WHOSe_Heritage``` and put under the root as ```./WHOSe_Heritage```)
 
+## Workflow and Dataset
+This project provides a workflow to to construct graph-based multi-modal datasets HeriGraph concerning heritage values and attributes using data from social media platform Flickr.
+The workflow is illustrated as follows:
+
+![Workflow of Data](/Diagrams/HeriGraph-DataFlow_1.png)
+
+To protect the privacy and copyright of Flickr users, only the final processed (stored) datasets (thus no raw images) will be provided in this repository.
+The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
+
 ## Case Studies
 Three cities related to UNESCO World Heritage and Historic Urban Landscape were selected as case studies: Amsterdam, the Netherlands ([Seventeenth-Century Canal Ring Area of Amsterdam inside the Singelgracht](https://whc.unesco.org/en/list/1349/)), Suzhou, China ([Classical Gardens of Suzhou](http://whc.unesco.org/en/list/813)), and Venice, Italy ([Venice and its Lagoon](https://whc.unesco.org/en/list/394)).
 
@@ -57,15 +66,6 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 | Suzhou (SUZ) | Classical Gardens of Suzhou | 31.302300N | 120.631300E | 5 km
 | Venice (VEN) | Venice and its Lagoon | 45.438759N | 12.327145E | 5 km
 | [city] | World Heritage status of [city] | [city_lat] | [city_lon] | [city_radius]
-
-## Workflow and Dataset
-This project provides a workflow to to construct graph-based multi-modal datasets HeriGraph concerning heritage values and attributes using data from social media platform Flickr.
-The workflow is illustrated as follows:
-
-![Workflow of Data](/Diagrams/HeriGraph-DataFlow_1.png)
-
-To protect the privacy and copyright of Flickr users, only the final processed (stored) datasets (thus no raw images) will be provided in this repository.
-The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
 
 ## Raw Data Collection
 ### Flickr API Requirements
