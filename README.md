@@ -98,7 +98,16 @@ The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&t
 The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following ```./Face_Detection_in_Images.ipynb```.
 The results will be saved as ```./[city]/data_storage/Face_preds.csv```.
 
-The final merged **visual features data** (982-dimensional) are provided in ```./[city]/data_storage/Vis_Features.csv```.
+The final merged **visual features data** (982-dimensional) are provided in ```./[city]/data_storage/Visual_Features.csv```, which is effectively a 984-column table.
+
+| Column Index | Name | Description | Data Type | Notation |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0 | ID | Unique Image Index from Flickr | String | -
+| 1 | IO_Type | Indoor/Outdoor Scene | String | - 
+| 2-513 | Vis_Feat_[i] | Last 512-dimensional Hidden Layer of ResNet-18 pretrained on PlacesCNN as Visual Feature | Float | ***H***<sup>v</sup>
+| 514-516 | Face_[*] | Number of faces, confidence of face prediction, proportion of faces in the image | Float | ***F*** 
+| 517-881 | SCE_[*] | Smoothened/Filtered 365-dimensional scene category prediction Logit | Float | &sigma;<sup>(5)</sup>(***L***<sup>s</sup>)
+| 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | &sigma;<sup>(10)</sup>(***L***<sup>a</sup>)
 
 ### Textual Features
 ### Contextual Features
