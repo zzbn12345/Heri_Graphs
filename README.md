@@ -7,7 +7,7 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
 (to be continued)
 
 ## Requirment and Dependency
-deep_translator == 
+deep_translator == 1.7.0
 
 facenet_pytorch == 2.5.2
 
@@ -58,6 +58,15 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 | Venice (VEN) | Venice and its Lagoon | 45.438759N | 12.327145E | 5 km
 | [city] | World Heritage status of [city] | [city_lat] | [city_lon] | [city_radius]
 
+## Workflow and Dataset
+This project provides a workflow to to construct graph-based multi-modal datasets HeriGraph concerning heritage values and attributes using data from social media platform Flickr.
+The workflow is illustrated as follows:
+
+![Workflow of Data](/Diagrams/HeriGraph-DataFlow_1.png)
+
+To protect the privacy and copyright of Flickr users, only the final processed (stored) datasets (thus no raw images) will be provided in this repository.
+The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
+
 ## Raw Data Collection
 ### Flickr API Requirements
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
@@ -79,6 +88,21 @@ The IDs will be collected in a 20 by 20 grid with the name of ```./[city]/data_s
 All the saved images will be stored in the folder ```./[city]/data_storage/images/grid/``` with the ```Large Square - url_q``` (150&times;150 px) version of the original image.
 
 Note that Flickr API might return an error code during the data inquiry. Run the both codes interatively to continue collecting data until the total amount is satisfied.
+
+## Multi-modal Feature Generation
+### Visual Features
+The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following ```./Places_pred.ipynb```.
+
+The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following ```./Face_Detection_in_Images.ipynb```.
+
+### Textual Features
+### Contextual Features
+
+## Label Generation
+### Heritage Values
+### Heritage Attributes
+
+## Multi-graph Construction
 
 ## Acknowledgements and License
 This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
