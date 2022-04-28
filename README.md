@@ -62,7 +62,7 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 ### Flickr API Requirements
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
 
-### Small Datasets
+### Small Datasets (*Recommended*)
 The code to download raw data as IDs of Flickr posts and to save images are given in ```./[city]/save_image.py```.
 
 Input the respective ```[api_key]```, ```[api_secret]``` ,```[city_lat]```, ```[city_lon]```, and ```[city_radius]``` to run the code.
@@ -77,6 +77,8 @@ Input the respective ```[api_key]```, ```[api_secret]``` , the range of minumum 
 
 The IDs will be collected in a 20 by 20 grid with the name of ```./[city]/data_storage/photo_ids_{}_{}.csv```, while the summarized metadata will be saved in ```./[city]/data_storage/photos_last.csv```.
 All the saved images will be stored in the folder ```./[city]/data_storage/images/grid/``` with the ```Large Square - url_q``` (150&times;150 px) version of the original image.
+
+Note that Flickr API might return an error code during the data inquiry. Run the both codes interatively to continue collecting data until the total amount is satisfied.
 
 ## Acknowledgements and License
 This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
