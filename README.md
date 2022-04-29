@@ -106,8 +106,8 @@ The final merged **visual features data** (982-dimensional) are provided in ```.
 | 1 | IO_Type | Indoor/Outdoor Scene | String | - 
 | 2-513 | Vis_Feat_[i] | Last 512-dimensional Hidden Layer of ResNet-18 pretrained on PlacesCNN as Visual Feature | Float | ***H***<sup>v</sup>
 | 514-516 | Face_[*] | Number of faces, confidence of face prediction, proportion of faces in the image | Float | ***F*** 
-| 517-881 | SCE_[*] | Smoothened/Filtered 365-dimensional scene category prediction Logit | Float | &sigma;<sup>(5)</sup>(***L***<sup>s</sup>)
-| 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | &sigma;<sup>(10)</sup>(***L***<sup>a</sup>)
+| 517-881 | SCE_[*] | Smoothened/Filtered 365-dimensional scene category prediction Logit | Float | **&sigma;**<sup>(5)</sup>(***L***<sup>s</sup>)
+| 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | **&sigma;**<sup>(10)</sup>(***L***<sup>a</sup>)
 
 ### Textual Features
 The data cleaning of textual data, and the 3-dimensional vector of original language of posts could be obtained following ```./Dataset_Cleaning_and_Merging_[city].ipynb```.
@@ -128,6 +128,18 @@ The final merged **textual features data** (771-dimensional) are provided in ```
 | 773-775 | English/ Local_Lang/ Other_Lang | Detected original language in the posts | Bolean | ***O***
 
 ### Contextual Features
+
+The **temporal** features about the timestamps of the posts in their unique week counts could be obtained following ```./Dataset_Cleaning_and_Merging_[city].ipynb```.
+The results will be saved in ```./[city]/data_storage/metadata.csv```.
+
+The **social** features about the social relations of the post owners could be obtained following ```./Social_Links_of_Interests.ipynb```.
+Input the ```[api_key]``` and ```[api_secret]``` to activate the queries of the public contacts and public groups of the Flickr users.
+The information will be respectively saved as ```./[city]/data_storage/contacts.csv```, ```./[city]/data_storage/interest.csv```, and ```./[city]/data_storage/friendship.csv```, while the final merged social information is saved as ```./[city]/data_storage/social_links.csv```.
+
+The **spatial** features about the locations of the posts and their connectivity in geographical network could be obtained following ```./Geographical_Graph_Construction.ipynb```.
+Input the respective ```[city_lat]```, ```[city_lon]```, and ```[city_radius]``` to run the code.
+The spatial network information will be saved respectively as ```./[city]/data_storage/GEO_nodes.csv``` showing the intersections in spatial network, ```./[city]/data_storage/GEO_edges.csv``` showing the connectivity of spatial nodes with travel time information, and ```./[city]/data_storage/GEO_node_dist.csv``` showing the travel time between any two nodes.
+The geo-node assigned to each post is recorded in ```./[city]/data_storage/GEO_metadata.csv```.
 
 ## Label Generation
 ### Heritage Values
