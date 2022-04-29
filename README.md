@@ -185,6 +185,16 @@ A demo of labelled heritage values can be seen with the following diagram:
 
 ### Heritage Attributes
 
+This project applied the heritage definition by [Veldpaus (2015)](https://pure.tue.nl/ws/files/3914913/798291.pdf) and [Ginzarly et al. (2019)](http://dx.doi.org/10.1016/j.culher.2018.10.002), keeping a nine-class category of depicted scenery of an image.
+
+A few models have been trained on the data presented by [Ginzarly et al. (2019)](http://dx.doi.org/10.1016/j.culher.2018.10.002) in Tripoli, Lebanon.
+The training process together with hyper-parameter tuning with grid search cross validation with [scikit-learn library](https://scikit-learn.org/stable/modules/classes.html) could be found in [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
+
+![Model_Training](/Diagrams/ML_models.png)
+
+The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib).
+
+
 ## Multi-graph Construction
 
 ## Acknowledgements and License
