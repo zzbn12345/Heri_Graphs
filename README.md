@@ -75,8 +75,8 @@ The components of the datasets are respectively saved in [```./dataset/[city]/``
 | ------------- | ------------- | ------------- | ------------- |
 | [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
 | [Textual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
-| [Value_Labels.csv]() | 18 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
-| [Attribute_Labels.csv]() | 16 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
+| [Attribute_Labels.csv]() | 24 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
 | [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***
 
 ## Raw Data Collection
@@ -133,7 +133,7 @@ The final merged **textual features data** (771-dimensional) are provided in [``
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0 | index | Unique Image Index from Flickr | String | -
-| 1 | text_bool | If the original post has a valid textual data (as a filter) | Boolean | - 
+| 1 | text_bool | Whether the original post has a valid textual data (as a filter) | Boolean | - 
 | 2 | revised_text | The processed and filtered textual data of the post as combination of description, title, and tags. | String | *S*
 | 3-4 | num_sent/ text_len | Number of sentences and number of words in the revised text | Integer | - 
 | 5-772 | BERT_[i] | The 768-dimensional output vector of [CLS] token | Float | ***H***<sup>B</sup>
@@ -155,6 +155,31 @@ The geo-node assigned to each post will be recorded in ```./[city]/data_storage/
 
 ## Label Generation
 ### Heritage Values
+The predicted labels on heritage values by BERT could be obtained following [```./bert_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/bert_inference_HeriGraph.ipynb).
+The results will be saved as ```./[city]/data_storage/metadata_bert.csv``` in post level and ```./[city]/data_storage/sentences_bert.csv``` in sentence level.
+
+The predicted labels on heritage values by ULMFiT could be obtained following [```./ulmfit_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/ulmfit_inference_HeriGraph.ipynb).
+The results will be saved as ```./[city]/data_storage/metadata_ulmfit.csv``` in post level and ```./[city]/data_storage/sentences_ulmfit.csv``` in sentence level.
+
+The comparison of the both models for performance, coherence, and consistency on both post level and sentence level could be obtained following [```./Diagram_Values.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Diagram_Values.ipynb).
+
+The final merged **heritage value label data** (11-dimensional) are provided in [```./dataset/[city]/Value_Labels.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Value_Labels.csv), which is effectively a 26-column table.
+
+| Column Index | Name | Description | Data Type | Notation |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0 | index | Unique Image Index from Flickr | String | -
+| 1 | text_bool | Whether the original post has a valid textual data (as a filter) | Boolean | - 
+| 2-12 | Criteria_[i]/ Others | The average predicted soft label of post text concerning heritage values in terms of [OUV](https://aclanthology.org/2021.findings-emnlp.34/). | Float | ***Y***<sup>HV</sup>
+| 13-18 | max_[i]\_val/ max_[i]\_col | The predicted hard top-3 labels of heritage values | Float/ String | - 
+| 19-20 | max_[i] | The top-k confidence of averaged soft label prediction | Float | -
+| 21-22 | conf_[i] | The average model confidence of BERT and ULMFiT for their top-k predictions | Float | ***&kappa;***<sup>HV(0)</sup>
+| 23-24 | same_[i] | The model agreement/consistency of BERT and ULMFiT for their top-k predictions | Float/ Boolean | ***&kappa;***<sup>HV(1)</sup>
+| 25 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
+
+A demo of labelled heritage values can be seen with the following diagram:
+
+![Heritage Values](/Diagrams/Value_labels.jpg)
+
 ### Heritage Attributes
 
 ## Multi-graph Construction
