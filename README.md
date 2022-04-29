@@ -155,6 +155,9 @@ The geo-node assigned to each post will be recorded in ```./[city]/data_storage/
 
 ## Label Generation
 ### Heritage Values
+
+This project applied the heritage value definition in UNESCO WHL with regard to ten [Outstanding Universal Value selection criteria](https://whc.unesco.org/en/criteria/) plus one additional "other" class, which is introduced and trained in [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage).
+
 The predicted labels on heritage values by BERT could be obtained following [```./bert_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/bert_inference_HeriGraph.ipynb).
 The results will be saved as ```./[city]/data_storage/metadata_bert.csv``` in post level and ```./[city]/data_storage/sentences_bert.csv``` in sentence level.
 
