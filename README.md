@@ -67,6 +67,18 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 | Venice (VEN) | Venice and its Lagoon | 45.438759N | 12.327145E | 5 km
 | [city] | World Heritage status of [city] | [city_lat] | [city_lon] | [city_radius]
 
+## Dataset Summary (skip the next parts of project workflow)
+As the final outcome of this project, datasets for multi-modal machine learning on multi-graphs are provided for each ```[city]```.
+The components of the datasets are respectively saved in ```./dataset/[city]/```, ready to be used for multiple tasks.
+
+| File Name | Column Size | Description | Notation |
+| ------------- | ------------- | ------------- | ------------- |
+| Visual_Features.csv | 984 | Visual Features extracted | ***X***<sup>vis</sup>
+| Textual_Features.csv | 776 | Textual Features extracted | ***X***<sup>tex</sup>
+| Value_Labels.csv | 18 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
+| Attribute_Labels.csv | 16 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| Edge_List.csv | 18 | Adjacency information of Multi-graphs with three types of links | ***A***
+
 ## Raw Data Collection
 ### Flickr API Requirements
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
@@ -98,7 +110,7 @@ The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&t
 The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following ```./Face_Detection_in_Images.ipynb```.
 The results will be saved as ```./[city]/data_storage/Face_preds.csv```.
 
-The final merged **visual features data** (982-dimensional) are provided in ```./[city]/data_storage/Visual_Features.csv```, which is effectively a 984-column table.
+The final merged **visual features data** (982-dimensional) are provided in ```./dataset/[city]/Visual_Features.csv```, which is effectively a 984-column table.
 
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
