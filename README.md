@@ -71,6 +71,8 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 As the final outcome of this project, datasets for multi-modal machine learning on multi-graphs are provided for each ```[city]```.
 The components of the datasets are respectively saved in [```./dataset/[city]/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/dataset), ready to be used for multiple tasks.
 
+The merging and saving of datasets could be found following [```./Dataset_Saving.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Dataset_Saving.ipynb).
+
 | File Name | Column Size | Description | Notation |
 | ------------- | ------------- | ------------- | ------------- |
 | [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
