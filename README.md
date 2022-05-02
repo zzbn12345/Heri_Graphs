@@ -28,6 +28,8 @@ fastai == 2.5.3
 
 flickrapi == 2.4.0
 
+[GIT Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files) (please install the GIT LFS before cloning the repository for storage of large datasets)
+
 matplotlib == 3.5.1
 
 networkx == 2.6.3
