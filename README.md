@@ -212,7 +212,7 @@ Users are invited to adjust the thresholds of labelled data to experiment on the
 | 0 | ID | Unique Image Index from Flickr | String | -
 | 1-9 | [various names] | The average predicted soft label of post image concerning heritage attributes in terms of [depicted scenes](http://dx.doi.org/10.1016/j.culher.2018.10.002). | Float | ***Y***<sup>HA</sup>
 | 10-11 | category[-/_id] | The predicted hard top-1 labels of heritage attributes | String | - 
-| 12-15 | category/cat_id_[model] | The top-1 hard label prediction of VOTE and STACK models | String | -
+| 12-15 | category/ cat_id_[model] | The top-1 hard label prediction of VOTE and STACK models | String | -
 | 16 | conf | The average model confidence of VOTE and STACK for their top-1 predictions | Float | ***&kappa;***<sup>HA(0)</sup>
 | 17 | category_same | The model agreement/consistency of VOTE and STACK for their top-1 predictions | Boolean | ***&kappa;***<sup>HA(1)</sup>
 | 18 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
