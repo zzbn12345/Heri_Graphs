@@ -246,7 +246,7 @@ The columns of ```[Temporal/Social/Spatial]_Similarity``` are the edge weight fo
 
 The statistics of generated graphs following [the standard of PyTorch-Geometric](https://pytorch-geometric.readthedocs.io/en/latest/notes/data_cheatsheet.html) could be found in the following table:
 
-| Name | #graphs/subgraphs | #nodes | #edges | #features | #classes/tasks |
+| Name | #graphs/ subgraphs | #nodes | #edges | #features | #classes/ tasks |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | HeriGraph | 3 | ~3271.7 | ~907,393.3 | - | -
 | └─Amsterdam | 3+1 | 3727 | 1,271,171 | 1753 | 11+9
