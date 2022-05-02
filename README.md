@@ -6,7 +6,20 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
 
 (to be continued)
 
-## Requirment and Dependency
+## Table of Content
+### [Requirement and Dependency](#requirement)
+### [Workflow and Dataset](#workflow)
+### [Case Studies](#case)
+### [Dataset Summary](#dataset)
+
+#### The following sections about the workflow can be skipped for those who only intend to use the provided datasets.
+### [Raw Data Collection](#raw)
+### [Multi-modal Feature Generation](#feature)
+### [Label Generation](#label)
+### [Multi-graph Construction](#graph)
+### [Acknowledgements and License](#license)
+
+## Requirement and Dependency<a name="requirement"></a>
 deep_translator == 1.7.0
 
 facenet_pytorch == 2.5.2
@@ -43,7 +56,7 @@ transformers == 4.16.2
 
 [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage) (please download the repository ```WHOSe_Heritage``` and put under the root as ```./WHOSe_Heritage```)
 
-## Workflow and Dataset
+## Workflow and Dataset<a name="workflow"></a>
 This project provides a workflow to to construct graph-based multi-modal datasets HeriGraph concerning heritage values and attributes using data from social media platform Flickr.
 The workflow is illustrated as follows:
 
@@ -52,7 +65,7 @@ The workflow is illustrated as follows:
 To protect the privacy and copyright of Flickr users, only [the final processed (stored) datasets](https://github.com/zzbn12345/Heri_Graphs/tree/main/dataset) (thus no raw images) will be provided in this repository.
 The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
 
-## Case Studies
+## Case Studies<a name="case"></a>
 Three cities related to UNESCO World Heritage and Historic Urban Landscape were selected as case studies: Amsterdam, the Netherlands ([Seventeenth-Century Canal Ring Area of Amsterdam inside the Singelgracht](https://whc.unesco.org/en/list/1349/)), Suzhou, China ([Classical Gardens of Suzhou](http://whc.unesco.org/en/list/813)), and Venice, Italy ([Venice and its Lagoon](https://whc.unesco.org/en/list/394)).
 
 The data of each case study has been put in a different folder, such as: ```./Amsterdam```, ```./Suzhou```, and ```./Venezia```.
@@ -67,7 +80,7 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 | Venice (VEN) | Venice and its Lagoon | 45.438759N | 12.327145E | 5 km
 | [city] | World Heritage status of [city] | [city_lat] | [city_lon] | [city_radius]
 
-## Dataset Summary (skip the next parts of project workflow)
+## Dataset Summary (skip the next parts of project workflow)<a name="dataset"></a>
 As the final outcome of this project, datasets for multi-modal machine learning on multi-graphs are provided for each ```[city]```.
 The components of the datasets are respectively saved in [```./dataset/[city]/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/dataset), ready to be used for multiple tasks.
 
@@ -81,7 +94,7 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 | [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
 | [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
-## Raw Data Collection
+## Raw Data Collection<a name="raw"></a>
 ### Flickr API Requirements
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
 
@@ -104,7 +117,7 @@ All the saved images will be stored in the folder ```./[city]/data_storage/image
 
 Note that Flickr API might return an error code during the data inquiry. Run the both codes interatively to continue collecting data until the total amount is satisfied.
 
-## Multi-modal Feature Generation
+## Multi-modal Feature Generation<a name="feature"></a>
 ### Visual Features
 The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Places_prediction.ipynb).
 The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&times;150 px small images only), and ```./[city]/data_storage/IMG_pred.csv``` (images of both sizes for comparison of confidence and/or consistency).
@@ -155,7 +168,7 @@ Input the respective ```[city_lat]```, ```[city_lon]```, and ```[city_radius]```
 The spatial network information will be saved respectively as ```./[city]/data_storage/GEO_nodes.csv``` showing the intersections in spatial network, ```./[city]/data_storage/GEO_edges.csv``` showing the connectivity of spatial nodes with travel time information, and ```./[city]/data_storage/GEO_node_dist.csv``` showing the travel time between any two nodes.
 The geo-node assigned to each post will be recorded in ```./[city]/data_storage/GEO_metadata.csv```.
 
-## Label Generation
+## Label Generation<a name="label"></a>
 ### Heritage Values
 
 This project applied the heritage value definition in UNESCO WHL with regard to ten [Outstanding Universal Value selection criteria](https://whc.unesco.org/en/criteria/) plus one additional "other" class, which is introduced and trained in [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage).
@@ -223,7 +236,7 @@ A demo of labelled heritage attributes can be seen with the following diagram:
 
 ![Heritage Attributes](/Diagrams/Categories.jpg)
 
-## Multi-graph Construction
+## Multi-graph Construction<a name="graph"></a>
 
 The graph construction process for the Multi-Graphs, the three subgraphs with Temporal, Social, and Spatial links, as well as the simple composed graphs could be obtained following [```./HeriGraph_Construction_[city].ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/HeriGraph_Construction_Venezia.ipynb).
 
@@ -255,7 +268,7 @@ The statistics of generated graphs following [the standard of PyTorch-Geometric]
 | └─Suzhou | 3+1 | 3137 | 916,496 | 1753 | 11+9
 | └─Venice | 3+1 | 2951 | 534,513 | 1753 | 11+9
 
-## Acknowledgements and License
+## Acknowledgements and License<a name="license"></a>
 This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
 
 [Places365-CNNs](https://github.com/CSAILVision/places365)
