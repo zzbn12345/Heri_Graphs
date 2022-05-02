@@ -73,11 +73,11 @@ The components of the datasets are respectively saved in [```./dataset/[city]/``
 
 | File Name | Column Size | Description | Notation |
 | ------------- | ------------- | ------------- | ------------- |
-| [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | $\boldsymbol{X}^\text{vis}$
-| [Textual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | $\boldsymbol{X}^\text{tex}$
-| [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | $\boldsymbol{Y}^\text{HV}\|\boldsymbol{K}^\text{HV}$
-| [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | $\boldsymbol{Y}^\text{HA}\|\boldsymbol{K}^\text{HA}$
-| [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | $\boldsymbol{A}, \boldsymbol{A}^\text{TEM}, \boldsymbol{A}^\text{SOC}. \boldsymbol{A}^\text{SPA}$
+| [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
+| [Textual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
+| [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
+| [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
 ## Raw Data Collection
 ### Flickr API Requirements
@@ -116,10 +116,10 @@ The final merged **visual features data** (982-dimensional) are provided in [```
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0 | ID | Unique Image Index from Flickr | String | -
 | 1 | IO_Type | Indoor/Outdoor Scene | String | - 
-| 2-513 | Vis_Feat_[i] | Last 512-dimensional Hidden Layer of ResNet-18 pretrained on PlacesCNN as Visual Feature | Float | $\boldsymbol{H}^\text{v}$
-| 514-516 | Face_[*] | Number of faces, confidence of face prediction, proportion of faces in the image | Float | $\boldsymbol{F}$
-| 517-881 | SCE_[*] | Smoothened/Filtered 365-dimensional scene category prediction Logit | Float | $\boldsymbol{\sigma}^{(5)}(\boldsymbol{L}^\text{s})$
-| 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | $\boldsymbol{\sigma}^{(10)}(\boldsymbol{L}^\text{a})$
+| 2-513 | Vis_Feat_[i] | Last 512-dimensional Hidden Layer of ResNet-18 pretrained on PlacesCNN as Visual Feature | Float | ***H***<sup>v</sup>
+| 514-516 | Face_[*] | Number of faces, confidence of face prediction, proportion of faces in the image | Float | ***F***
+| 517-881 | SCE_[*] | Smoothened/Filtered 365-dimensional scene category prediction Logit | Float | **&sigma;**<sup>(5)</sup>(***L***<sup>s</sup>)
+| 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | **&sigma;**<sup>(10)</sup>(***L***<sup>a</sup>)
 
 ### Textual Features
 The data cleaning of textual data, and the 3-dimensional vector of original language of posts could be obtained following [```./Dataset_Cleaning_and_Merging_[city].ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Dataset_Cleaning_and_Merging_Venice.ipynb).
@@ -134,10 +134,10 @@ The final merged **textual features data** (771-dimensional) are provided in [``
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0 | index | Unique Image Index from Flickr | String | -
 | 1 | text_bool | Whether the original post has a valid textual data (as a filter) | Boolean | - 
-| 2 | revised_text | The processed and filtered textual data of the post as combination of description, title, and tags. | String | $\mathcal{S}$
+| 2 | revised_text | The processed and filtered textual data of the post as combination of description, title, and tags. | String | *S*
 | 3-4 | num_sent/ text_len | Number of sentences and number of words in the revised text | Integer | - 
-| 5-772 | BERT_[i] | The 768-dimensional output vector of [CLS] token | Float | $\boldsymbol{H}^\text{B}$
-| 773-775 | English/ Local_Lang/ Other_Lang | Detected original language in the posts | Boolean | $\boldsymbol{O}$
+| 5-772 | BERT_[i] | The 768-dimensional output vector of [CLS] token | Float | ***H***<sup>B</sup>
+| 773-775 | English/ Local_Lang/ Other_Lang | Detected original language in the posts | Boolean | ***O***
 
 ### Contextual Features
 
@@ -175,11 +175,11 @@ Users are invited to adjust the thresholds of labelled data to experiment on the
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0 | index | Unique Image Index from Flickr | String | -
 | 1 | text_bool | Whether the original post has a valid textual data (as a filter) | Boolean | - 
-| 2-12 | Criteria_[i]/ Others | The average predicted soft label of post text concerning heritage values in terms of [OUV](https://aclanthology.org/2021.findings-emnlp.34/). | Float | $\boldsymbol{Y}^\text{HV}$
+| 2-12 | Criteria_[i]/ Others | The average predicted soft label of post text concerning heritage values in terms of [OUV](https://aclanthology.org/2021.findings-emnlp.34/). | Float | ***Y***<sup>HV</sup>
 | 13-18 | max_[i]\_val/ max_[i]\_col | The predicted hard top-3 labels of heritage values | Float/ String | - 
 | 19-20 | max_[i] | The top-k confidence of averaged soft label prediction | Float | -
-| 21-22 | conf_[i] | The average model confidence of BERT and ULMFiT for their top-k predictions | Float | $\boldsymbol{\kappa}^\text{HV(0)}$
-| 23-24 | same_[i] | The model agreement/consistency of BERT and ULMFiT for their top-k predictions in terms of Jaccard Index | Float/ Boolean | $\boldsymbol{\kappa}^\text{HV(1)}$
+| 21-22 | conf_[i] | The average model confidence of BERT and ULMFiT for their top-k predictions | Float | ***&kappa;***<sup>HV(0)</sup>
+| 23-24 | same_[i] | The model agreement/consistency of BERT and ULMFiT for their top-k predictions in terms of Jaccard Index | Float/ Boolean | ***&kappa;***<sup>HV(1)</sup>
 | 25 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
 
 A demo of labelled heritage values can be seen with the following diagram:
@@ -210,11 +210,11 @@ Users are invited to adjust the thresholds of labelled data to experiment on the
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0 | ID | Unique Image Index from Flickr | String | -
-| 1-9 | [various names] | The average predicted soft label of post image concerning heritage attributes in terms of [depicted scenes](http://dx.doi.org/10.1016/j.culher.2018.10.002). | Float | $\boldsymbol{Y}^\text{HA}$
+| 1-9 | [various names] | The average predicted soft label of post image concerning heritage attributes in terms of [depicted scenes](http://dx.doi.org/10.1016/j.culher.2018.10.002). | Float | ***Y***<sup>HA</sup>
 | 10-11 | category[-/_id] | The predicted hard top-1 labels of heritage attributes | String | - 
 | 12-15 | category/cat_id_[model] | The top-1 hard label prediction of VOTE and STACK models | String | -
-| 16 | conf | The average model confidence of VOTE and STACK for their top-1 predictions | Float | $\boldsymbol{\kappa}^\text{HA(0)}$
-| 17 | category_same | The model agreement/consistency of VOTE and STACK for their top-1 predictions | Boolean | $\boldsymbol{\kappa}^\text{HA(1)}$
+| 16 | conf | The average model confidence of VOTE and STACK for their top-1 predictions | Float | ***&kappa;***<sup>HA(0)</sup>
+| 17 | category_same | The model agreement/consistency of VOTE and STACK for their top-1 predictions | Boolean | ***&kappa;***<sup>HA(1)</sup>
 | 18 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
 
 A demo of labelled heritage attributes can be seen with the following diagram:
@@ -230,18 +230,18 @@ The columns of ```[Temporal/Social/Spatial]_Similarity``` are the edge weight fo
 
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 0 | 0 | Unique Image Index from Flickr for Node 0 | String | $v_0$
-| 1 | 1 | Unique Image Index from Flickr for Node 1 | String | $v_1$
-| 2-3 | Week_[i] | The timestamp ID in week level | String | $\mathfrak{t}_i$
-| 4 | dist | The temporal distance of two nodes | String | $\mathfrak{T}$
-| 5 | Temporal_Similarity | The edge weight of temporal links | Float | $\boldsymbol{A}^\text{TEM}$
-| 6-7 | User_[i] | The user ID in Flickr | String | $\mathfrak{u}_i$
-| 8 | relationship | The strength level of relationship of two users | Integer | $\mathfrak{U}$
-| 9 | Social_Similarity | The edge weight of social links | Float | $\boldsymbol{A}^\text{SOC}$
-| 10-11 | GEO_[i] | The GEO-location ID in the spatial network | String | $\upsilon_i$
-| 12 | geo_distance | The spatial distance of two nodes in terms of travel time | Float | $w_e$
-| 13 | Spatial_Similarity | The edge weight of spatial links | Float | $\boldsymbol{A}^\text{SPA}$
-| 14 | One_Edege | The adjacency indicator for the composed simple graph | Boolean | $\boldsymbol{A}$
+| 0 | 0 | Unique Image Index from Flickr for Node 0 | String | *v*<sub>0</sub>
+| 1 | 1 | Unique Image Index from Flickr for Node 1 | String | *v*<sub>1</sub>
+| 2-3 | Week_[i] | The timestamp ID in week level | String | *t*<sub>i</sub>
+| 4 | dist | The temporal distance of two nodes | String | -
+| 5 | Temporal_Similarity | The edge weight of temporal links | Float | ***A***<sup>TEM</sup>
+| 6-7 | User_[i] | The user ID in Flickr | String | *u*<sub>i</sub>
+| 8 | relationship | The strength level of relationship of two users | Integer | -
+| 9 | Social_Similarity | The edge weight of social links | Float | ***A***<sup>SOC</sup>
+| 10-11 | GEO_[i] | The GEO-location ID in the spatial network | String | &upsilon;<sub>i</sub>
+| 12 | geo_distance | The spatial distance of two nodes in terms of travel time | Float | *w*<sub>e</sub>
+| 13 | Spatial_Similarity | The edge weight of spatial links | Float | ***A***<sup>SPA</sup>
+| 14 | One_Edege | The adjacency indicator for the composed simple graph | Boolean | ***A***
 | 15 | Same_Node | Whether the two nodes are the same one | Boolean | -
 
 ## Acknowledgements and License
