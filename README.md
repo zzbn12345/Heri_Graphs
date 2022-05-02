@@ -232,4 +232,6 @@ This project applied the pretrained models of the following projects which are o
 
 [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage)
 
+The workflows and datasets of this paper can be used under the Creative Common License (Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). 
+Please give appropriate credit, such as providing a link to our paper or to [this github repository](https://github.com/zzbn12345/Heri_Graphs).
 The copyright of all the downloaded and processed images belongs to the image owners.
