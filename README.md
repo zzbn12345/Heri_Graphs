@@ -249,9 +249,9 @@ The statistics of generated graphs following [the standard of PyTorch-Geometric]
 | Name | #graphs/subgraphs | #nodes | #edges | #features | #classes/tasks |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | HeriGraph | 3 | ~3271.7 | ~907,393.3 | - | -
-| └─ Amsterdam | 3+1 | 3727 | 1,271,171 | 1753 | 11+9
-| └─ Suzhou | 3+1 | 3137 | 916,496 | 1753 | 11+9
-| └─ Venice | 3+1 | 2951 | 534,513 | 1753 | 11+9
+| └─Amsterdam | 3+1 | 3727 | 1,271,171 | 1753 | 11+9
+| └─Suzhou | 3+1 | 3137 | 916,496 | 1753 | 11+9
+| └─Venice | 3+1 | 2951 | 534,513 | 1753 | 11+9
 
 ## Acknowledgements and License
 This project applied the pretrained models of the following projects which are openly released on GitHub or published as python packages. Part of the codes are adpated from the original codes.
