@@ -76,7 +76,7 @@ The components of the datasets are respectively saved in [```./dataset/[city]/``
 | [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
 | [Textual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
 | [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
-| [Attribute_Labels.csv]() | 24 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
 | [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***
 
 ## Raw Data Collection
@@ -104,7 +104,7 @@ Note that Flickr API might return an error code during the data inquiry. Run the
 
 ## Multi-modal Feature Generation
 ### Visual Features
-The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_pred.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Places_pred.ipynb).
+The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Places_prediction.ipynb).
 The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&times;150 px small images only), and ```./[city]/data_storage/IMG_pred.csv``` (images of both sizes for comparison of confidence and/or consistency).
 
 The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following [```./Face_Detection_in_Images.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Face_Detection_in_Images.ipynb).
@@ -167,6 +167,9 @@ The results will be saved as ```./[city]/data_storage/metadata_ulmfit.csv``` in 
 The comparison of the both models for performance, coherence, and consistency on both post level and sentence level could be obtained following [```./Diagram_Values.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Diagram_Values.ipynb).
 
 The final merged **heritage value label data** (11-dimensional) are provided in [```./dataset/[city]/Value_Labels.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Value_Labels.csv), which is effectively a 26-column table.
+A sample is considered as ```labelled``` if the average top-3 confidence of both BERT and UMLFiT models is larger than ```0.75``` and the [Jaccard Index](https://en.wikipedia.org/wiki/Jaccard_index) of such top-3 predictions is larger than ```0.5```.
+This leads to around ```40-50%``` texual samples as labelled (thus around ```10-35%``` of all data samples in each city).
+Users are invited to adjust the thresholds of labelled data to experiment on the effects.
 
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -176,7 +179,7 @@ The final merged **heritage value label data** (11-dimensional) are provided in 
 | 13-18 | max_[i]\_val/ max_[i]\_col | The predicted hard top-3 labels of heritage values | Float/ String | - 
 | 19-20 | max_[i] | The top-k confidence of averaged soft label prediction | Float | -
 | 21-22 | conf_[i] | The average model confidence of BERT and ULMFiT for their top-k predictions | Float | ***&kappa;***<sup>HV(0)</sup>
-| 23-24 | same_[i] | The model agreement/consistency of BERT and ULMFiT for their top-k predictions | Float/ Boolean | ***&kappa;***<sup>HV(1)</sup>
+| 23-24 | same_[i] | The model agreement/consistency of BERT and ULMFiT for their top-k predictions in terms of Jaccard Index | Float/ Boolean | ***&kappa;***<sup>HV(1)</sup>
 | 25 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
 
 A demo of labelled heritage values can be seen with the following diagram:
@@ -192,8 +195,31 @@ The training process together with hyper-parameter tuning with grid search cross
 
 ![Model_Training](/Diagrams/ML_models.png)
 
-The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib).
+The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/stack_classifier.joblib).
 
+The predicted labels on heritage attributes by both classifiers could be obtained following [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
+The results will be saved as ```./[city]/data_storage/IMG_pred_150_cat.csv```.
+
+The comparison of the both models for performance, coherence, and consistency could be obtained following [```./Diagram_Attributes.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Diagram_Attributes.ipynb).
+
+The final merged **heritage attribute label data** (9-dimensional) are provided in [```./dataset/[city]/Attribute_Labels.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Attribute_Labels.csv), which is effectively a 19-column table.
+A sample is considered as ```labelled``` if the average top-1 confidence of both VOTE and STACK models is larger than ```0.7``` and the top-1 predictions is ```same```.
+This leads to around ```35-50%``` samples as labelled.
+Users are invited to adjust the thresholds of labelled data to experiment on the effects.
+
+| Column Index | Name | Description | Data Type | Notation |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 0 | ID | Unique Image Index from Flickr | String | -
+| 1-9 | [various names] | The average predicted soft label of post image concerning heritage attributes in terms of [depicted scenes](http://dx.doi.org/10.1016/j.culher.2018.10.002). | Float | ***Y***<sup>HA</sup>
+| 10-11 | category[-/_id] | The predicted hard top-1 labels of heritage attributes | String | - 
+| 12-15 | category/cat_id_[model] | The top-1 hard label prediction of VOTE and STACK models | String | -
+| 16 | conf | The average model confidence of VOTE and STACK for their top-1 predictions | Float | ***&kappa;***<sup>HA(0)</sup>
+| 17 | category_same | The model agreement/consistency of VOTE and STACK for their top-1 predictions | Boolean | ***&kappa;***<sup>HA(1)</sup>
+| 18 | labelled | Whether the sample should be considered as "pseudo-labelled" data | Boolean | -
+
+A demo of labelled heritage attributes can be seen with the following diagram:
+
+![Heritage Attributes](/Diagrams/Categories.jpg)
 
 ## Multi-graph Construction
 
