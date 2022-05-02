@@ -7,17 +7,17 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
 (to be continued)
 
 ## Table of Content
-### [Requirement and Dependency](#requirement)
-### [Workflow and Dataset](#workflow)
-### [Case Studies](#case)
-### [Dataset Summary](#dataset)
+#### [Requirement and Dependency](#requirement)
+#### [Workflow and Dataset](#workflow)
+#### [Case Studies](#case)
+#### [Dataset Summary](#dataset)
 
-#### The following sections about the workflow can be skipped for those who only intend to use the provided datasets.
-### [Raw Data Collection](#raw)
-### [Multi-modal Feature Generation](#feature)
-### [Label Generation](#label)
-### [Multi-graph Construction](#graph)
-### [Acknowledgements and License](#license)
+The following sections about the workflow can be skipped for those who only intend to use the provided datasets.
+#### [Raw Data Collection](#raw)
+#### [Multi-modal Feature Generation](#feature)
+#### [Label Generation](#label)
+#### [Multi-graph Construction](#graph)
+#### [Acknowledgements and License](#license)
 
 ## Requirement and Dependency<a name="requirement"></a>
 deep_translator == 1.7.0
