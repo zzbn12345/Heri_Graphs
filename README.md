@@ -64,7 +64,7 @@ The workflow is illustrated as follows:
 
 ![Workflow of Data](/Diagrams/HeriGraph-DataFlow_1.png)
 
-To protect the privacy and copyright of Flickr users, only [the final processed (stored) datasets](https://github.com/zzbn12345/Heri_Graphs/tree/main/dataset) (thus no raw images) will be provided in this repository.
+To protect the privacy and copyright of Flickr users, only [the final processed (stored) datasets](dataset) (thus no raw images) will be provided in this repository.
 The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
 
 ## Case Studies<a name="case"></a>
