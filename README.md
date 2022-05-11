@@ -121,7 +121,7 @@ Note that Flickr API might return an error code during the data inquiry. Run the
 
 ## Multi-modal Feature Generation<a name="feature"></a>
 ### Visual Features
-The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](Places_prediction.ipynb).
+The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](Places_Prediction.ipynb).
 The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&times;150 px small images only), and ```./[city]/data_storage/IMG_pred.csv``` (images of both sizes for comparison of confidence and/or consistency).
 
 The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following [```./Face_Detection_in_Images.ipynb```](Face_Detection_in_Images.ipynb).
