@@ -84,14 +84,14 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 
 ## Dataset Summary (skip the next parts of project workflow)<a name="dataset"></a>
 As the final outcome of this project, datasets for multi-modal machine learning on multi-graphs are provided for each ```[city]```.
-The components of the datasets are respectively saved in [```./dataset/[city]/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/dataset), ready to be used for multiple tasks.
+The components of the datasets are respectively saved in [```./dataset/[city]/```](dataset), ready to be used for multiple tasks.
 
-The merging and saving of datasets could be found following [```./Dataset_Saving.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Dataset_Saving.ipynb).
+The merging and saving of datasets could be found following [```./Dataset_Saving.ipynb```](Dataset_Saving.ipynb).
 
 | File Name | Column Size | Description | Notation |
 | ------------- | ------------- | ------------- | ------------- |
-| [Visual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
-| [Textual_Features.csv](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
+| [Visual_Features.csv](dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
+| [Textual_Features.csv](dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
 | [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
 | [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
 | [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
@@ -101,7 +101,7 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
 
 ### Small Datasets (*Recommended*)
-The code to download raw data as IDs of Flickr posts and to save images are given in [```./[city]/save_image.py```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Venezia/save_image.py).
+The code to download raw data as IDs of Flickr posts and to save images are given in [```./[city]/save_image.py```](Venezia/save_image.py).
 
 Input the respective ```[api_key]```, ```[api_secret]``` ,```[city_lat]```, ```[city_lon]```, and ```[city_radius]``` to run the code.
 A restriction of maximum ```5000``` IDs has been given to the API to keep datasets comparable to each other.
@@ -109,7 +109,7 @@ A restriction of maximum ```5000``` IDs has been given to the API to keep datase
 The downloaded metadata will be saved as ```./[city]/data_storage/images/photos_sizes.csv```, and the images of which the owner allowed to download with ```candownload==True``` flag will be saved in ```./[city]/data_storage/images/150/``` and ```./[city]/data_storage/images/320/```, respectively, for the ```Large Square - url_q``` (150&times;150 px) and ```Small 320 - url_n``` (320&times;240 px) versions of the original image.
 
 ### Large Datasets
-To collect large datasets without the restriction of ```5000``` IDs, follow [```./Venezia/collect_data.py```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Venezia/collect_data.py) to save all the IDs and metadata, and follow [```./Venezia/save_image_all.py```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Venezia/save_image_all.py) to download the images in the folder.
+To collect large datasets without the restriction of ```5000``` IDs, follow [```./Venezia/collect_data.py```](Venezia/collect_data.py) to save all the IDs and metadata, and follow [```./Venezia/save_image_all.py```](Venezia/save_image_all.py) to download the images in the folder.
 
 Input the respective ```[api_key]```, ```[api_secret]``` , the range of minumum and maximum
 ```[city_lat]``` and ```[city_lon]``` as bounding box of the region, the size of the grid (default ```20```), and radius of inquiry in the grid (default ```0.3```) to run the code.
@@ -121,13 +121,13 @@ Note that Flickr API might return an error code during the data inquiry. Run the
 
 ## Multi-modal Feature Generation<a name="feature"></a>
 ### Visual Features
-The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Places_prediction.ipynb).
+The 512-dimensional vector of hidden visual features, 365-dimensional [scene category](https://github.com/CSAILVision/places365) predictions, and 102-dimensional [scene attribute](https://cs.brown.edu/~gmpatter/sunattributes.html) predictions could be obtained following [```./Places_Prediction.ipynb```](Places_prediction.ipynb).
 The results will be saved as ```./[city]/data_storage/IMG_pred_150.csv``` (150&times;150 px small images only), and ```./[city]/data_storage/IMG_pred.csv``` (images of both sizes for comparison of confidence and/or consistency).
 
-The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following [```./Face_Detection_in_Images.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Face_Detection_in_Images.ipynb).
+The 3-dimensional vector of [face prediction](https://github.com/timesler/facenet-pytorch) in images could be obtained following [```./Face_Detection_in_Images.ipynb```](Face_Detection_in_Images.ipynb).
 The results will be saved as ```./[city]/data_storage/Face_preds.csv```.
 
-The final merged **visual features data** (982-dimensional) are provided in [```./dataset/[city]/Visual_Features.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Visual_Features.csv), which is effectively a 984-column table.
+The final merged **visual features data** (982-dimensional) are provided in [```./dataset/[city]/Visual_Features.csv```](dataset/Venice/Visual_Features.csv), which is effectively a 984-column table.
 
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -139,13 +139,13 @@ The final merged **visual features data** (982-dimensional) are provided in [```
 | 882-983 | ATT_[*] | Smoothened/Filtered 102-dimensional scene attribute prediction Logit | Float | **&sigma;**<sup>(10)</sup>(***L***<sup>a</sup>)
 
 ### Textual Features
-The data cleaning of textual data, and the 3-dimensional vector of original language of posts could be obtained following [```./Dataset_Cleaning_and_Merging_[city].ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Dataset_Cleaning_and_Merging_Venice.ipynb).
+The data cleaning of textual data, and the 3-dimensional vector of original language of posts could be obtained following [```./Dataset_Cleaning_and_Merging_[city].ipynb```](Dataset_Cleaning_and_Merging_Venice.ipynb).
 The results will be saved as ```./[city]/data_storage/metadata.csv``` in post level and ```./[city]/data_storage/sentences.csv``` in sentence level.
 
-The 768-dimensional vector of BERT [CLS] token could be obtained following [```./bert_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/bert_inference_HeriGraph.ipynb).
+The 768-dimensional vector of BERT [CLS] token could be obtained following [```./bert_inference_HeriGraph.ipynb```](bert_inference_HeriGraph.ipynb).
 The results will be saved as ```./[city]/data_storage/metadata_bert.csv``` in post level and ```./[city]/data_storage/sentences_bert.csv``` in sentence level.
 
-The final merged **textual features data** (771-dimensional) are provided in [```./dataset/[city]/Textual_Features.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Textual_Features.csv), which is effectively a 776-column table.
+The final merged **textual features data** (771-dimensional) are provided in [```./dataset/[city]/Textual_Features.csv```](dataset/Venice/Textual_Features.csv), which is effectively a 776-column table.
 
 | Column Index | Name | Description | Data Type | Notation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -158,14 +158,14 @@ The final merged **textual features data** (771-dimensional) are provided in [``
 
 ### Contextual Features
 
-The **temporal features** about the timestamps of the posts in their unique week counts could be obtained following [```./Dataset_Cleaning_and_Merging_[city].ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Dataset_Cleaning_and_Merging_Venice.ipynb).
+The **temporal features** about the timestamps of the posts in their unique week counts could be obtained following [```./Dataset_Cleaning_and_Merging_[city].ipynb```](Dataset_Cleaning_and_Merging_Venice.ipynb).
 The results will be saved in ```./[city]/data_storage/metadata.csv```.
 
-The **social features** about the social relations of the post owners could be obtained following [```./Social_Links_of_Interests.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Social_Links_of_Interests.ipynb).
+The **social features** about the social relations of the post owners could be obtained following [```./Social_Links_of_Interests.ipynb```](Social_Links_of_Interests.ipynb).
 Input the ```[api_key]``` and ```[api_secret]``` to activate the queries of the public contacts and public groups of the Flickr users.
 The information will be respectively saved as ```./[city]/data_storage/contacts.csv```, ```./[city]/data_storage/interest.csv```, and ```./[city]/data_storage/friendship.csv```, while the final merged social information is saved as ```./[city]/data_storage/social_links.csv```.
 
-The **spatial features** about the locations of the posts and their connectivity in geographical network could be obtained following [```./Geographical_Graph_Construction.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Geographical_Graph_Construction.ipynb).
+The **spatial features** about the locations of the posts and their connectivity in geographical network could be obtained following [```./Geographical_Graph_Construction.ipynb```](Geographical_Graph_Construction.ipynb).
 Input the respective ```[city_lat]```, ```[city_lon]```, and ```[city_radius]``` to run the code.
 The spatial network information will be saved respectively as ```./[city]/data_storage/GEO_nodes.csv``` showing the intersections in spatial network, ```./[city]/data_storage/GEO_edges.csv``` showing the connectivity of spatial nodes with travel time information, and ```./[city]/data_storage/GEO_node_dist.csv``` showing the travel time between any two nodes.
 The geo-node assigned to each post will be recorded in ```./[city]/data_storage/GEO_metadata.csv```.
@@ -175,15 +175,15 @@ The geo-node assigned to each post will be recorded in ```./[city]/data_storage/
 
 This project applied the heritage value definition in UNESCO WHL with regard to ten [Outstanding Universal Value selection criteria](https://whc.unesco.org/en/criteria/) plus one additional "other" class, which is introduced and trained in [WHOSe_Heritage](https://github.com/zzbn12345/WHOSe_Heritage).
 
-The predicted labels on heritage values by BERT could be obtained following [```./bert_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/bert_inference_HeriGraph.ipynb).
+The predicted labels on heritage values by BERT could be obtained following [```./bert_inference_HeriGraph.ipynb```](bert_inference_HeriGraph.ipynb).
 The results will be saved as ```./[city]/data_storage/metadata_bert.csv``` in post level and ```./[city]/data_storage/sentences_bert.csv``` in sentence level.
 
-The predicted labels on heritage values by ULMFiT could be obtained following [```./ulmfit_inference_HeriGraph.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/ulmfit_inference_HeriGraph.ipynb).
+The predicted labels on heritage values by ULMFiT could be obtained following [```./ulmfit_inference_HeriGraph.ipynb```](ulmfit_inference_HeriGraph.ipynb).
 The results will be saved as ```./[city]/data_storage/metadata_ulmfit.csv``` in post level and ```./[city]/data_storage/sentences_ulmfit.csv``` in sentence level.
 
-The comparison of the both models for performance, coherence, and consistency on both post level and sentence level could be obtained following [```./Diagram_Values.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Diagram_Values.ipynb).
+The comparison of the both models for performance, coherence, and consistency on both post level and sentence level could be obtained following [```./Diagram_Values.ipynb```](Diagram_Values.ipynb).
 
-The final merged **heritage value label data** (11-dimensional) are provided in [```./dataset/[city]/Value_Labels.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Value_Labels.csv), which is effectively a 26-column table.
+The final merged **heritage value label data** (11-dimensional) are provided in [```./dataset/[city]/Value_Labels.csv```](dataset/Venice/Value_Labels.csv), which is effectively a 26-column table.
 A sample is considered as ```labelled``` if the average top-3 confidence of both BERT and UMLFiT models is larger than ```0.75``` and the [Jaccard Index](https://en.wikipedia.org/wiki/Jaccard_index) of such top-3 predictions is larger than ```0.5```.
 This leads to around ```40-50%``` texual samples as labelled (thus around ```10-35%``` of all data samples in each city).
 Users are invited to adjust the thresholds of labelled data to experiment on the effects.
@@ -208,18 +208,18 @@ A demo of labelled heritage values can be seen with the following diagram:
 This project applied the heritage definition by [Veldpaus (2015)](https://pure.tue.nl/ws/files/3914913/798291.pdf) and [Ginzarly et al. (2019)](http://dx.doi.org/10.1016/j.culher.2018.10.002), keeping a nine-class category of depicted scenery of an image.
 
 A few models have been trained on the data presented by [Ginzarly et al. (2019)](http://dx.doi.org/10.1016/j.culher.2018.10.002) in Tripoli, Lebanon.
-The training process together with hyper-parameter tuning with grid search cross validation with [scikit-learn library](https://scikit-learn.org/stable/modules/classes.html) could be found in [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
+The training process together with hyper-parameter tuning with grid search cross validation with [scikit-learn library](https://scikit-learn.org/stable/modules/classes.html) could be found in [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
 
 ![Model_Training](/Diagrams/ML_models.png)
 
-The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](https://github.com/zzbn12345/Heri_Graphs/tree/main/Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Tripoli/model_storage/stack_classifier.joblib).
+The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](Tripoli/model_storage/stack_classifier.joblib).
 
-The predicted labels on heritage attributes by both classifiers could be obtained following [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
+The predicted labels on heritage attributes by both classifiers could be obtained following [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
 The results will be saved as ```./[city]/data_storage/IMG_pred_150_cat.csv```.
 
-The comparison of the both models for performance, coherence, and consistency could be obtained following [```./Diagram_Attributes.ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/Diagram_Attributes.ipynb).
+The comparison of the both models for performance, coherence, and consistency could be obtained following [```./Diagram_Attributes.ipynb```](Diagram_Attributes.ipynb).
 
-The final merged **heritage attribute label data** (9-dimensional) are provided in [```./dataset/[city]/Attribute_Labels.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Attribute_Labels.csv), which is effectively a 19-column table.
+The final merged **heritage attribute label data** (9-dimensional) are provided in [```./dataset/[city]/Attribute_Labels.csv```](dataset/Venice/Attribute_Labels.csv), which is effectively a 19-column table.
 A sample is considered as ```labelled``` if the average top-1 confidence of both VOTE and STACK models is larger than ```0.7``` and the top-1 predictions is ```same```.
 This leads to around ```35-50%``` samples as labelled.
 Users are invited to adjust the thresholds of labelled data to experiment on the effects.
@@ -240,9 +240,9 @@ A demo of labelled heritage attributes can be seen with the following diagram:
 
 ## Multi-graph Construction<a name="graph"></a>
 
-The graph construction process for the Multi-Graphs, the three subgraphs with Temporal, Social, and Spatial links, as well as the simple composed graphs could be obtained following [```./HeriGraph_Construction_[city].ipynb```](https://github.com/zzbn12345/Heri_Graphs/blob/main/HeriGraph_Construction_Venezia.ipynb).
+The graph construction process for the Multi-Graphs, the three subgraphs with Temporal, Social, and Spatial links, as well as the simple composed graphs could be obtained following [```./HeriGraph_Construction_[city].ipynb```](HeriGraph_Construction_Venezia.ipynb).
 
-The [Edge Lists](https://en.wikipedia.org/wiki/Edge_list) that could be directly used [by NetworkX](https://networkx.org/documentation/stable/reference/generated/networkx.convert_matrix.from_pandas_edgelist.html) or other softwares to construct graphs are provided in [```./dataset/[city]/Edge_List.csv```](https://github.com/zzbn12345/Heri_Graphs/blob/main/dataset/Venice/Edge_List.csv), which is effectively a 16-column table.
+The [Edge Lists](https://en.wikipedia.org/wiki/Edge_list) that could be directly used [by NetworkX](https://networkx.org/documentation/stable/reference/generated/networkx.convert_matrix.from_pandas_edgelist.html) or other softwares to construct graphs are provided in [```./dataset/[city]/Edge_List.csv```](dataset/Venice/Edge_List.csv), which is effectively a 16-column table.
 The columns of ```[Temporal/Social/Spatial]_Similarity``` are the edge weight for each type of subgraphs, and the column ```One_Edge``` is the adjacency indicator for the composed simple graph.
 
 | Column Index | Name | Description | Data Type | Notation |
