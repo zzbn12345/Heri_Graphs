@@ -62,7 +62,7 @@ transformers == 4.16.2
 This project provides a workflow to to construct graph-based multi-modal datasets HeriGraph concerning heritage values and attributes using data from social media platform Flickr.
 The workflow is illustrated as follows:
 
-![Workflow of Data](/Diagrams/HeriGraph-DataFlow_2.png)
+![Workflow of Data](Diagrams/HeriGraph-DataFlow_2.png)
 
 To protect the privacy and copyright of Flickr users, only [the final processed (stored) datasets](dataset) (thus no raw images) will be provided in this repository.
 The users are invited to collect and construct datasets of the provided case study cities or any other new ```[city]``` for their own interests.
@@ -201,7 +201,7 @@ Users are invited to adjust the thresholds of labelled data to experiment on the
 
 A demo of labelled heritage values can be seen with the following diagram:
 
-![Heritage Values](/Diagrams/Value_labels.jpg)
+![Heritage Values](Diagrams/Value_labels.jpg)
 
 ### Heritage Attributes
 
@@ -210,7 +210,7 @@ This project applied the heritage definition by [Veldpaus (2015)](https://pure.t
 A few models have been trained on the data presented by [Ginzarly et al. (2019)](http://dx.doi.org/10.1016/j.culher.2018.10.002) in Tripoli, Lebanon.
 The training process together with hyper-parameter tuning with grid search cross validation with [scikit-learn library](https://scikit-learn.org/stable/modules/classes.html) could be found in [```./Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb```](Machine_Learning_Models_on_Heritage_Attributes_Tripoli.ipynb).
 
-![Model_Training](/Diagrams/ML_models.png)
+![Model_Training](Diagrams/ML_models.png)
 
 The trained ensemble VOTE and STACK classification models are saved in the folder [```./Tripoli/model_storage/```](Tripoli/model_storage) respectively under [```./Tripoli/model_storage/vote_classifier.joblib```](Tripoli/model_storage/vote_classifier.joblib) and [```./Tripoli/model_storage/stack_classifier.joblib```](Tripoli/model_storage/stack_classifier.joblib).
 
@@ -236,7 +236,7 @@ Users are invited to adjust the thresholds of labelled data to experiment on the
 
 A demo of labelled heritage attributes can be seen with the following diagram:
 
-![Heritage Attributes](/Diagrams/Categories.jpg)
+![Heritage Attributes](Diagrams/Categories.jpg)
 
 ## Multi-graph Construction<a name="graph"></a>
 
