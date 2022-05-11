@@ -1,0 +1,16 @@
+deep_translator==1.7.0
+facenet_pytorch==2.5.2
+fastai==2.5.3
+flickrapi==2.4.0
+matplotlib==3.5.1
+networkx==2.6.3
+numpy==1.22.2
+opencv-python==4.5.5.62
+osmnx==1.1.2
+pandas==1.4.0
+pillow==9.0.1
+scipy==1.8.0
+scikit-learn==1.0.2
+torch==1.10.2
+torchvision==0.11.3
+transformers==4.16.2
