@@ -92,9 +92,9 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 | ------------- | ------------- | ------------- | ------------- |
 | [Visual_Features.csv](dataset/Venice/Visual_Features.csv) | 984 | Visual Features extracted | ***X***<sup>vis</sup>
 | [Textual_Features.csv](dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
-| [Value_Labels.csv]() | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
-| [Attribute_Labels.csv]() | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
-| [Edge_List.csv]() | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
+| [Value_Labels.csv](dataset/Venice/Value_Labels.csv) | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
+| [Attribute_Labels.csv](dataset/Venice/Attribute_Labels.csv) | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| [Edge_List.csv](dataset/Venice/Edge_List.csv) | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
 ## Raw Data Collection<a name="raw"></a>
 ### Flickr API Requirements
