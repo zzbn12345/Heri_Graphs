@@ -4,7 +4,19 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
 
 ## Cite as
 
-(to be continued)
+Bai, N., Nourian, P., Luo, R., & Pereira Roders, A. (2022). Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media. *arXiv preprint arXiv:2205.07545*.
+```
+@misc{https://doi.org/10.48550/arxiv.2205.07545,
+  doi = {10.48550/ARXIV.2205.07545},
+  url = {https://arxiv.org/abs/2205.07545},
+  author = {Bai, Nan and Nourian, Pirouz and Luo, Renqian and Roders, Ana Pereira},
+  keywords = {Social and Information Networks (cs.SI), Computers and Society (cs.CY), FOS: Computer and information sciences, FOS: Computer and information sciences, E.1; J.4, 91D30},
+  title = {Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+```
 
 ## Table of Content
 #### [Requirement and Dependency](#requirement)
