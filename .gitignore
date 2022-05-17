@@ -1,2 +1,7 @@
 
 HeriGraph_Dataset.zip
+dataset/Amsterdam/Edge_List.csv
+dataset/Suzhou/Edge_List.csv
+dataset/Venice-XL/Textual_Features.csv
+dataset/Venice-XL/Visual_Features.csv
+dataset/Venice/Edge_List.csv
