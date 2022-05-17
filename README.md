@@ -2,11 +2,8 @@
 
 This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media*' submitted to ArXiv preprint server showing the collection, preprocessing, and rearrangement of data related to Heritage values and attributes in three cities that have canal-related [UNESCO World Heritage](http://whc.unesco.org/en/about/) properties: Venice, Suzhou, and Amsterdam.
 
-[![DOI](https://zenodo.org/badge/324971104.svg)](https://zenodo.org/badge/latestdoi/324971104)
-
 ## Cite as
 
-Bai, N., Nourian, P., Luo, R., & Pereira Roders, A. (2022). Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media. *arXiv preprint [arXiv:2205.07545](https://arxiv.org/abs/2205.07545)*.
 ```
 @misc{https://doi.org/10.48550/arxiv.2205.07545,
   doi = {10.48550/ARXIV.2205.07545},
