@@ -96,6 +96,8 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 | [Attribute_Labels.csv](dataset/Venice/Attribute_Labels.csv) | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
 | [Edge_List.csv](dataset/Venice/Edge_List.csv) | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
+The complete processed dataset could be obtained through the following [Google Drive Link](https://drive.google.com/file/d/1F-kNhIWyUboOBdVVeygYc5qPHeSbR1ou/view?usp=sharing).
+
 ## Raw Data Collection<a name="raw"></a>
 ### Flickr API Requirements
 Apply for your own API key from [Flickr APP Garden](https://www.flickr.com/services/apps/create/), and save the ```[api_key]``` and ```[api_secret]``` for later usage of API whenever requested.
