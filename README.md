@@ -256,7 +256,7 @@ A demo of labelled heritage attributes can be seen with the following diagram:
 
 The graph construction process for the Multi-Graphs, the three subgraphs with Temporal, Social, and Spatial links, as well as the simple composed graphs could be obtained following [```./HeriGraph_Construction_[city].ipynb```](HeriGraph_Construction_Venezia.ipynb).
 
-The [Edge Lists](https://en.wikipedia.org/wiki/Edge_list) that could be directly used [by NetworkX](https://networkx.org/documentation/stable/reference/generated/networkx.convert_matrix.from_pandas_edgelist.html) or other softwares to construct graphs are provided in [```./dataset/[city]/Edge_List.csv```](dataset/Venice/Edge_List.csv), which is effectively a 16-column table.
+The [Edge Lists](https://en.wikipedia.org/wiki/Edge_list) that could be directly used [by NetworkX](https://networkx.org/documentation/stable/reference/generated/networkx.convert_matrix.from_pandas_edgelist.html) or other softwares to construct graphs are provided in ```./dataset/[city]/Edge_List.csv``` provided in the [```zip``` file shared on Google Drive](https://drive.google.com/file/d/1F-kNhIWyUboOBdVVeygYc5qPHeSbR1ou/view?usp=sharing), which is effectively a 16-column table.
 The columns of ```[Temporal/Social/Spatial]_Similarity``` are the edge weight for each type of subgraphs, and the column ```One_Edge``` is the adjacency indicator for the composed simple graph.
 
 | Column Index | Name | Description | Data Type | Notation |
