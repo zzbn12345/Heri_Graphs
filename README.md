@@ -42,8 +42,6 @@ fastai == 2.5.3
 
 flickrapi == 2.4.0
 
-[GIT Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files) (please install the GIT LFS before cloning the repository for storage of large datasets)
-
 matplotlib == 3.5.1
 
 networkx == 2.6.3
@@ -108,7 +106,7 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 | [Textual_Features.csv](dataset/Venice/Textual_Features.csv) | 776 | Textual Features extracted | ***X***<sup>tex</sup>
 | [Value_Labels.csv](dataset/Venice/Value_Labels.csv) | 26 | Soft and Hard Labels for Heritage Values together with confidence scores | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>
 | [Attribute_Labels.csv](dataset/Venice/Attribute_Labels.csv) | 19 | Soft and Hard Labels for Heritage Attributes together with confidence scores | ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
-| [Edge_List.csv](dataset/Venice/Edge_List.csv) | 18 | Adjacency information of Multi-graphs with three types of links | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
+| Edge_List.csv | 18 | Adjacency information of Multi-graphs with three types of links (currently only available on Google Drive) | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
 The complete processed dataset could be obtained through the following [Google Drive Link](https://drive.google.com/file/d/1F-kNhIWyUboOBdVVeygYc5qPHeSbR1ou/view?usp=sharing).
 
