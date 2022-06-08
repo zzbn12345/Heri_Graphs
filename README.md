@@ -18,6 +18,25 @@ This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating
   copyright = {arXiv.org perpetual, non-exclusive license}
 }
 ```
+or
+
+Nan, Bai, Pirouz, Nourian, Renqian, Luo, & Ana, Pereira Roders. (2022, May 17). Heri\_Graphs: arXiv supplementary material for HeriGraph (v1.1). Zenodo. [https://doi.org/10.5281/zenodo.6556244](https://doi.org/10.5281/zenodo.6556244)
+```
+@software{nan_bai_2022,
+  author       = {Nan, Bai,
+                  Pirouz, Nourian,
+                  Renqian, Luo, and
+                  Ana, Pereira Roders},
+  title        = {Heri\_Graphs: arXiv supplementary material for HeriGraph},
+  month        = may,
+  year         = 2022,
+  publisher    = {Zenodo},
+  version      = {v1.1},
+  doi          = {10.5281/zenodo.6556244},
+  url          = {https://doi.org/10.5281/zenodo.6556244}
+}
+
+```
 
 ## Table of Content
 #### [Requirement and Dependency](#requirement)
