@@ -1,24 +1,28 @@
-# Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media
+# Heri-Graphs: A Dataset Creation Framework for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media
 
-This is the Code and Dataset for the Paper '*Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media*' submitted to ArXiv preprint server showing the collection, preprocessing, and rearrangement of data related to Heritage values and attributes in three cities that have canal-related [UNESCO World Heritage](http://whc.unesco.org/en/about/) properties: Venice, Suzhou, and Amsterdam.
+This is the Code and Dataset for the Paper '*Heri-Graphs: A Dataset Creation Framework for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media*' published in *ISPRS International Journal of Geo-Information* showing the collection, preprocessing, and rearrangement of data related to Heritage values and attributes in three cities that have canal-related [UNESCO World Heritage](http://whc.unesco.org/en/about/) properties: Venice, Suzhou, and Amsterdam.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6556244.svg)](https://doi.org/10.5281/zenodo.6556244)
 
 ## Cite as
 
-Bai, N., Nourian, P., Luo, R., & Roders, A. P. (2022). Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media. *arXiv preprint arXiv:2205.07545*.
+Bai, N., Nourian, P., Luo, R., & Pereira Roders, A. (2022). Heri-Graphs: A Dataset Creation Framework for Multi-Modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media. *ISPRS International Journal of Geo-Information*, 11(9), 469. MDPI AG. Retrieved from http://dx.doi.org/10.3390/ijgi11090469
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2205.07545,
-  doi = {10.48550/ARXIV.2205.07545},
-  url = {https://arxiv.org/abs/2205.07545},
-  author = {Bai, Nan and Nourian, Pirouz and Luo, Renqian and Roders, Ana Pereira},
-  keywords = {Social and Information Networks (cs.SI), Computers and Society (cs.CY), FOS: Computer and information sciences, FOS: Computer and information sciences, E.1; J.4, 91D30},
-  title = {Heri-Graphs: A Workflow of Creating Datasets for Multi-modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
-}
+@article{Bai2022HeriGraphs, 
+    title={Heri-Graphs: A Dataset Creation Framework for Multi-Modal Machine Learning on Graphs of Heritage Values and Attributes with Social Media}, 
+    volume={11}, 
+    ISSN={2220-9964}, 
+    url={http://dx.doi.org/10.3390/ijgi11090469},
+    DOI={10.3390/ijgi11090469}, 
+    number={9}, 
+    journal={ISPRS International Journal of Geo-Information}, 
+    publisher={MDPI AG}, 
+    author={Bai, Nan and Nourian, Pirouz and Luo, Renqian and Pereira Roders, Ana}, 
+    year={2022}, 
+    month={Aug}, 
+    pages={469} }
+
 ```
 or
 
