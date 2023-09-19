@@ -296,7 +296,7 @@ The columns of ```[Temporal/Social/Spatial]_Similarity``` are the edge weight fo
 | 10-11 | GEO_[i] | The GEO-location ID in the spatial network | String | &upsilon;<sub>i</sub>
 | 12 | geo_distance | The spatial distance of two nodes in terms of travel time | Float | *w*<sub>e</sub>
 | 13 | Spatial_Similarity | The edge weight of spatial links | Float | ***A***<sup>SPA</sup>
-| 14 | One_Edege | The adjacency indicator for the composed simple graph | Boolean | ***A***
+| 14 | One_Edge | The adjacency indicator for the composed simple graph | Boolean | ***A***
 | 15 | Same_Node | Whether the two nodes are the same one | Boolean | -
 
 The statistics of generated graphs following [the standard of PyTorch-Geometric](https://pytorch-geometric.readthedocs.io/en/latest/notes/data_cheatsheet.html) could be found in the following table:
