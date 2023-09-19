@@ -140,7 +140,7 @@ The complete processed dataset could be obtained through the following [Google D
 
 A numpy array version of the final dataset (currently only available for Venice) is available under [```./dataset_np/[city]/```](dataset_np), which is more efficient and compact than the csv version, especially for the link data as it uses the Scipy sparse matrices.
 
-The saving process of numpy version dataset could be found following [```./Dataset_Saving_np.ipynb```](Dataset_Saving_np.ipynb).
+The saving process of numpy version dataset could be found following [```./Dataset_Saving_np.ipynb```](Dataset_Saving_np.ipynb), [```./HeriGraph_Construction_Venezia(sparse)_np.ipynb```](HeriGraph_Construction_Venezia(sparse)_np.ipynb) and [```./HeriGraph_Construction_Venice_Large(sparse)_np.ipynb```](HeriGraph_Construction_Venice_Large(sparse)_np.ipynb).
 
 | File Name | Array Size | Description | Notation |
 | ------------- | ------------- | ------------- | ------------- |
