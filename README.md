@@ -48,7 +48,8 @@ Nan, Bai, Pirouz, Nourian, Renqian, Luo, & Ana, Pereira Roders. (2022, May 17). 
 #### [Requirement and Dependency](#requirement)
 #### [Workflow and Dataset](#workflow)
 #### [Case Studies](#case)
-#### [Dataset Summary](#dataset)
+#### [Dataset (csv) Summary](#dataset)
+#### [Dataset (numpy) Summary](#dataset_np) (updated 19 September 2023)
 
 The following sections about the workflow can be skipped for those who only intend to use the provided datasets.
 #### [Raw Data Collection](#raw)
@@ -134,7 +135,7 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 
 The complete processed dataset could be obtained through the following [Google Drive Link](https://drive.google.com/file/d/1F-kNhIWyUboOBdVVeygYc5qPHeSbR1ou/view?usp=sharing).
 
-## Dataset (numpy) Summary (skip the next parts of project workflow)<a name="dataset"></a>
+## Dataset (numpy) Summary (skip the next parts of project workflow)<a name="dataset_np"></a>
 (updated 19 September 2023)
 
 A numpy array version of the final dataset (currently only available for Venice) is available under [```./dataset_np/[city]/```](dataset_np), which is more efficient and compact than the csv version, especially for the link data as it uses the Scipy sparse matrices.
