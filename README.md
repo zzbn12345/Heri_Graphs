@@ -118,7 +118,7 @@ For constructing your ```own dataset``` with any other ```[city]```, build an in
 | Venice (VEN) | Venice and its Lagoon | 45.438759N | 12.327145E | 5 km
 | [city] | World Heritage status of [city] | [city_lat] | [city_lon] | [city_radius]
 
-## Dataset Summary (skip the next parts of project workflow)<a name="dataset"></a>
+## Dataset (csv) Summary (skip the next parts of project workflow)<a name="dataset"></a>
 As the final outcome of this project, datasets for multi-modal machine learning on multi-graphs are provided for each ```[city]```.
 The components of the datasets are respectively saved in [```./dataset/[city]/```](dataset), ready to be used for multiple tasks.
 
@@ -133,6 +133,31 @@ The merging and saving of datasets could be found following [```./Dataset_Saving
 | Edge_List.csv | 18 | Adjacency information of Multi-graphs with three types of links (currently only available on Google Drive) | ***A***, ***A***<sup>TEM</sup>, ***A***<sup>SOC</sup>, ***A***<sup>SPA</sup>
 
 The complete processed dataset could be obtained through the following [Google Drive Link](https://drive.google.com/file/d/1F-kNhIWyUboOBdVVeygYc5qPHeSbR1ou/view?usp=sharing).
+
+## Dataset (numpy) Summary (skip the next parts of project workflow)<a name="dataset"></a>
+(updated 19 September 2023)
+
+A numpy array version of the final dataset (currently only available for Venice) is available under [```./dataset_np/[city]/```](dataset_np), which is more efficient and compact than the csv version, especially for the link data as it uses the Scipy sparse matrices.
+
+The saving process of numpy version dataset could be found following [```./Dataset_Saving_np.ipynb```](Dataset_Saving_np.ipynb).
+
+| File Name | Array Size | Description | Notation |
+| ------------- | ------------- | ------------- | ------------- |
+| [Visual_Features.npy](dataset_np/Venice/Visual_Features.npy) | (*, 984) | Visual Features extracted | ***X***<sup>vis</sup>
+| [Textual_Features.npy](dataset_np/Venice/Textual_Features.npy) | (*, 776) | Textual Features extracted | ***X***<sup>tex</sup>
+| [labels.npz](dataset_np/Venice/labels.npz) | - | Values and Attributes combined, with respective keys "VAL_LAB" and "ATT_LAB" | ***Y***<sup>HV</sup>\|***K***<sup>HV</sup>,  ***Y***<sup>HA</sup>\|***K***<sup>HA</sup>
+| [node_types.npy](dataset_np/Venice/node_types.npy) | (*, ) | A boolean variable indicating if the sample only has visual features and no textual features (0) or has both features (1)
+| [train_val_test_idx.npz](dataset_np/Venice/train_val_test_idx.npz) | - | Three arrays of indices indicating the training set, validation set, and test set for future tasks, with respective keys "train", "val", "test"
+| [A_simp.npz](dataset_np/Venice/A_simp.npz) | - | Sparse matrix marking the links of the simplified composed graph | ***A***
+| [A_SOC.npz](dataset_np/Venice/A_SOC.npz) | - | Sparse matrix marking the weights of social links | ***A***<sup>SOC</sup>
+| [A_SPA.npz](dataset_np/Venice/A_SPA.npz) | - | Sparse matrix marking the weights of social links | ***A***<sup>SPA</sup>
+| [A_TEM.npz](dataset_np/Venice/A_TEM.npz) | - | Sparse matrix marking the weights of social links | ***A***<sup>TEM</sup>
+
+To download the numpy version of Venice directly, use this [Google Drive link](https://drive.google.com/file/d/1sxcKiZr1YGDv06wr03nsk5HVZledgzi9/view?usp=share_link).
+
+To download the numpy version of Venice-XL directly, use this [Google Drive Link](https://drive.google.com/file/d/1QZ5tyUWs6jYjh7mJrsnpou76iy-vb0CA/view?usp=share_link).
+
+For loading the numpy version of dataset in Pytorch-Geometric library, check the upcoming repository [Stones_Venice](https://github.com/zzbn12345/Stones_Venice) in a follow-up project.
 
 ## Raw Data Collection<a name="raw"></a>
 ### Flickr API Requirements
